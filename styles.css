@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Stoke&display=swap");
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  all: unset;
+}
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+  --bgHeaderFooter: #00000030;
+  --bgBorder: #00000020;
+  --dark: #333;
+  --light: #eee;
+  --mediumLight: #cccccc;
+}
+
+/* Page themes */
+
+.darkTheme {
+  background-color: var(--dark);
+  transition: 0.4s;
+  color: var(--mediumLight);
+}
+
+.whiteTheme {
+  background-color: var(--light);
+  transition: 0.4s;
+  color: var(--dark);
+}
+
+/* Document */
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Stoke", "Segoe UI", Verdana, sans-serif;
+}
+header {
+  flex: 0 8rem;
+  background-color: var(--bgHeaderFooter);
+  border-bottom: 0.2rem solid var(--bgBorder);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 3rem;
+}
+main {
+  flex: 1;
+}
+footer {
+  flex: 0 6rem;
+  background-color: var(--bgHeaderFooter);
+  border-top: 0.2rem solid var(--bgBorder);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Switch */
+
+.switch {
+  flex: 0 5.8rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  display: flex;
+  cursor: pointer;
+  border: 0.3rem solid var(--mediumLight);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 3rem;
+  padding: 0.4rem;
+}
+
+.slider:before {
+  content: "";
+  height: 1.8rem;
+  width: 2.6rem;
+  background-color: var(--mediumLight);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 1rem;
+}
+
+input:checked + .slider {
+  border-color: var(--dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.9rem);
+  background-color: var(--dark);
+}
